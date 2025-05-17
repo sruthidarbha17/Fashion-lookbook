@@ -1,0 +1,17 @@
+def recommend_style(preference):
+    styles = {
+        "casual": ["Jeans and T-shirt", "Sneakers", "Denim Jacket","Minimal watch"],
+        "formal": ["Blazer and Trousers", "Dress Shoes", "Button-up Shirt"," Black or brown leather oxford shoes"],
+        "sporty": ["Track Pants", "Sneakers", "Sports Jersey"],
+        "boho": ["Maxi Dress", "Sandals", "Floral Accessories","crochet top"],
+        "street": ["Oversized Hoodie", "Chunky Sneakers", "Cargo Pants","Flannel shirts (layered open)"]
+    }
+    return styles.get(preference.lower(), ["No style found for this preference."])
+
+if __name__ == "__main__":
+    print("Welcome to Fashion Style Recommender!")
+    user_pref = input("Enter your preferred style (casual, formal, sporty, boho, street): ")
+    recommendations = recommend_style(user_pref)
+    print("\nRecommended Outfit Pieces:")
+    for item in recommendations:
+        print(f"- {item}")
